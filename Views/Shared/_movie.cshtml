@@ -1,0 +1,40 @@
+@using DynamicData.Entity
+@model Movie
+
+<div class="card mb-3">
+
+
+    <div class="row">
+        <div class="col-md-3">
+            @if (!string.IsNullOrEmpty(Model.MovieUrl))
+            {
+                <img src="~/img/@Model.MovieUrl" alt="@Model.MovieTitle" style="max-width: 250px; border-radius: 8px" />
+            }
+        </div>
+
+
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title">@Model.MovieTitle</h5>
+                <div>
+                    <a class="btn btn-primary " asp-controller="Movie" asp-action="details"
+                        asp-route-id="@Model.MovieId">details</a>
+                    @*<a class="btn btn-primary " asp-controller="Movie" asp-action="edit"
+                        asp-route-id="@Model.MovieId">Edit</a>
+
+
+                    <form asp-controller="Movie" asp-action="delete" method="post" style="display:inline;">
+                        <input type="hidden" name="MovieId" value="@Model.MovieId" />
+                        <input type="hidden" name="MovieTitle" value="@Model.MovieTitle" />
+
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+
+
+
+                    </form>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

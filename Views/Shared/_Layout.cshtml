@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] FilmListesi</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DynamicData.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+
+    @RenderSection("message", false)
+    @await Html.PartialAsync("_Navbar")
+    @await RenderSectionAsync("header", required: false)
+
+
+
+    @if (IsSectionDefined("menu"))
+    {
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-3">
+                    @RenderSection("menu", false)
+                </div>
+                <div class="col-md-9">
+
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+
+
+    }
+    else
+    {
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderBody()
+
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>

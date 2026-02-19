@@ -1,0 +1,21 @@
+@using DynamicData.Entity
+@model List<DynamicData.Entity.Genre>
+
+
+<div class="list-group">
+
+    <a href="/movie/list/"
+        class="list-group-item list-group-item-action @(ViewBag.SelectedGenre == null ? "active" : "")">Tüm
+        kategoriler</a>
+
+    @foreach (var genre in Model)
+    {
+        <a href="/movie/list/@genre.GenreId"
+            class="list-group-item list-group-item-action @(ViewBag.SelectedGenre == @genre.GenreId.ToString() ? "active" : "")">
+            @genre.Name
+
+
+
+        </a>
+    }
+</div>

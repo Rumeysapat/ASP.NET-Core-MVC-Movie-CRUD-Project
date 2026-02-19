@@ -1,0 +1,79 @@
+@model DynamicData.Models.AdminCreateMovieViewModel
+
+
+
+
+<h1>Create Movie</h1>
+
+<hr />
+<form method="post" asp-controller="Admin" asp-action="MovieCreate">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+
+
+            </div>
+            <div class="form-group">
+
+                <label asp-for="MovieDescription"></label>
+                <textarea asp-for="MovieDescription" class="form-control"></textarea>
+                <span asp-validation-for="MovieDescription" class="text-danger"></span>
+
+
+            </div>
+            <div class="form-group">
+
+                <label asp-for="ReleaseDate"></label>
+                <input asp-for="ReleaseDate" class="form-control"></textarea>
+                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+
+
+            </div>
+            <div class="form-group">
+
+                <label asp-for="IsClassic"></label>
+                <input asp-for="IsClassic" type="checkbox"></textarea>
+                <span asp-validation-for="IsClassic" class="text-danger"></span>
+
+
+            </div>
+
+
+
+
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+
+        </div>
+        <div class="col-md-4">
+
+            @foreach (var item in ((List<DynamicData.Entity.Genre>)ViewBag.Genres))
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="SelectedGenreIds" value="@item.GenreId"
+                        id="genre_@item.GenreId" @(Model.SelectedGenreIds!=null &&Model.SelectedGenreIds.Any(i => i ==
+                                                                     item.GenreId) ? "checked" : "") />
+
+                    <label class=" form-check-label" for="genre_@item.GenreId">
+                        @item.Name
+                    </label>
+                </div>
+
+
+            }
+
+
+            <span asp-validation-for="SelectedGenreIds" class="text-danger"></span>
+
+
+        </div>
+    </div>
+</form>

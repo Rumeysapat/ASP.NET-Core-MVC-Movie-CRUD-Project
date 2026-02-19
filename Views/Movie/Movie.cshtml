@@ -1,0 +1,45 @@
+@model MovieViewModel
+
+@section menu
+{
+    @*@await Html.PartialAsync("_menu", Model.Genres)*@
+    @await Component.InvokeAsync("Genre")
+}
+<h1>Film Listesi</h1>
+<div id="filmler">
+
+
+    @if (Model.Movies.Count() > 0)
+    {
+        @foreach (var movie in Model.Movies)
+        {
+            @await Html.PartialAsync("_movie", movie)
+        }
+
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            İlgili kategorideki film bulunamadı!
+        </div>
+    }
+
+</div>
+@if (TempData["Message"] != null)
+{
+    @section message
+    {
+        @await Html.PartialAsync("_message", (string)TempData["Message"])
+    }
+
+}
+
+
+
+@*MovieRepository → MovieController → Movie.cshtml → _movie.cshtml
+       (liste)          (MovieViewModel)         (Movie)
+Controller: veriyi toplar, ViewModel’e koyar
+
+Movie.cshtml: listeyi dolaşır ve partial view’i çağırır
+
+_movie.cshtml: tek tek film objelerini render eder ve ekrana basar*@
