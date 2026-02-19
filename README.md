@@ -60,6 +60,9 @@ Admin panel implementation
 Database relationships
 
 📸 Screenshots
+
+
+
 <img width="350" height="150" alt="Ekran Resmi 2026-02-19 13 27 48" src="https://github.com/user-attachments/assets/60ceaddb-c6d0-4a58-91e1-83f7472ec757" />
 <img width="350" height="150" alt="Ekran Resmi 2026-02-19 13 28 23" src="https://github.com/user-attachments/assets/7521a334-641c-459b-be39-98ea48a18f7b" />
 
@@ -69,7 +72,7 @@ Database relationships
 <img width="350" height="150" alt="Ekran Resmi 2026-02-19 13 28 34" src="https://github.com/user-attachments/assets/9da2c469-016d-4d4e-900f-b28143c3abde" />
 
 📥 Installation
-git clone https://github.com/yourusername/ASP.NET-Core-MVC-Movie-CRUD-Project.git
+[git clone https://github.com/yourusername/ASP.NET-Core-MVC-Movie-CRUD-Project.git](https://github.com/Rumeysapat/ASP.NET-Core-MVC-Movie-CRUD-Project)
 
 
 Open the project in Visual Studio
