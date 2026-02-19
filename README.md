@@ -72,7 +72,7 @@ Database relationships
 <img width="350" height="150" alt="Ekran Resmi 2026-02-19 13 28 34" src="https://github.com/user-attachments/assets/9da2c469-016d-4d4e-900f-b28143c3abde" />
 
 📥 Installation
-[git clone https://github.com/yourusername/ASP.NET-Core-MVC-Movie-CRUD-Project.git](https://github.com/Rumeysapat/ASP.NET-Core-MVC-Movie-CRUD-Project)
+(https://github.com/Rumeysapat/ASP.NET-Core-MVC-Movie-CRUD-Project)
 
 
 Open the project in Visual Studio
